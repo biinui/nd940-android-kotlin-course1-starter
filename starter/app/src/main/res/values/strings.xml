@@ -1,8 +1,16 @@
 <resources>
     <string name="app_name">ShoeStore</string>
 
-    <string name="email_text">Email address</string>
-    <string name="password_text">Password</string>
-    <string name="new_login_button">New Login</string>
-    <string name="login_with_existing_account_button">Login with existing account</string>
+    <string name="email">Email address</string>
+    <string name="password">Password</string>
+    <string name="new_login">New Login</string>
+    <string name="login_with_existing_account">Login with existing account</string>
+
+    <string name="welcome_title">Welcome!</string>
+    <string name="welcome_message">We\'re delighted to have you here. We\'ll handle your recurring grocery needs so you\'ll save time and energy. Thank you!</string>
+    <string name="go_to_instructions">What does this app do?</string>
+
+    <string name="instructions_title">Instructions</string>
+    <string name="instructions_message">Look around the list of items by scrolling.</string>
+    <string name="go_to_grocery_list">Let\'s go!</string>
 </resources>

@@ -14,7 +14,7 @@
             android:id="@+id/username_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/email_text" />
+            android:text="@string/email" />
 
         <EditText
             android:id="@+id/email_edit"
@@ -22,14 +22,14 @@
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="10"
-            android:hint="@string/email_text"
+            android:hint="@string/email"
             android:inputType="textEmailAddress" />
 
         <TextView
             android:id="@+id/password_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/password_text" />
+            android:text="@string/password" />
 
         <EditText
             android:id="@+id/password_edit"
@@ -37,20 +37,20 @@
             android:layout_height="wrap_content"
             android:autofillHints=""
             android:ems="10"
-            android:hint="@string/password_text"
+            android:hint="@string/password"
             android:inputType="textPassword" />
 
         <Button
             android:id="@+id/new_login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/new_login_button" />
+            android:text="@string/new_login" />
 
         <Button
             android:id="@+id/login_with_existing_account_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/login_with_existing_account_button" />
+            android:text="@string/login_with_existing_account" />
 
     </LinearLayout>
 
