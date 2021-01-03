@@ -15,4 +15,11 @@
     <string name="go_to_grocery_list">Let\'s go!</string>
     <string name="edit">Edit</string>
 
+    <string name="name">Name</string>
+    <string name="company">Company</string>
+    <string name="price">Price</string>
+    <string name="description">Description</string>
+    <string name="save">Save</string>
+    <string name="cancel">Cancel</string>
+
 </resources>
