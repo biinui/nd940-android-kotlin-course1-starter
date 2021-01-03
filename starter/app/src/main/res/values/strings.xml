@@ -13,4 +13,6 @@
     <string name="instructions_title">Instructions</string>
     <string name="instructions_message">Look around the list of items by scrolling.</string>
     <string name="go_to_grocery_list">Let\'s go!</string>
+    <string name="edit">Edit</string>
+
 </resources>
