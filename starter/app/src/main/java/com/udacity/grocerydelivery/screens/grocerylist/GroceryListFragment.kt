@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.fragment.findNavController
 import com.udacity.grocerydelivery.R
 import com.udacity.grocerydelivery.databinding.FragmentGroceryListBinding
 
@@ -23,6 +24,10 @@ class GroceryListFragment : Fragment() {
                                          , container
                                          , false
                                          )
+
+        binding.fab.setOnClickListener {
+            findNavController().navigate(GroceryListFragmentDirections.actionGroceryListFragmentToItemDetailFragment())
+        }
 
         return binding.root
     }
