@@ -42,6 +42,6 @@
     </fragment>
     <fragment
         android:id="@+id/itemDetailFragment"
-        android:name="com.udacity.grocerydelivery.screens.shoedetail.ItemDetailFragment"
+        android:name="com.udacity.grocerydelivery.screens.itemdetail.ItemDetailFragment"
         android:label="ItemDetailFragment" />
 </navigation>

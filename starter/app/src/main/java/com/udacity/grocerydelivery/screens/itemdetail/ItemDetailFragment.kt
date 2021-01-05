@@ -1,4 +1,4 @@
-package com.udacity.grocerydelivery.screens.shoedetail
+package com.udacity.grocerydelivery.screens.itemdetail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
