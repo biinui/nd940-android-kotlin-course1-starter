@@ -1,4 +1,4 @@
-package com.udacity.shoestore.screens.instructions
+package com.udacity.grocerydelivery.screens.instructions
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.udacity.shoestore.R
-import com.udacity.shoestore.databinding.FragmentInstructionsBinding
+import androidx.navigation.fragment.findNavController
+import com.udacity.grocerydelivery.R
+import com.udacity.grocerydelivery.databinding.FragmentInstructionsBinding
 
 class InstructionsFragment : Fragment() {
 
@@ -23,6 +24,10 @@ class InstructionsFragment : Fragment() {
                                          , container
                                          , false
                                          )
+
+        binding.goToGrocerylistButton.setOnClickListener {
+            findNavController().navigate(InstructionsFragmentDirections.actionInstructionsFragmentToGroceryListFragment())
+        }
 
         return binding.root
     }

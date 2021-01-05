@@ -1,4 +1,4 @@
-package com.udacity.shoestore.screens.welcome
+package com.udacity.grocerydelivery.screens.shoedetail
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,12 +6,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.udacity.shoestore.R
-import com.udacity.shoestore.databinding.FragmentWelcomeBinding
+import com.udacity.grocerydelivery.R
+import com.udacity.grocerydelivery.databinding.FragmentItemDetailBinding
 
-class WelcomeFragment : Fragment() {
+class ItemDetailFragment : Fragment() {
 
-    private lateinit var binding: FragmentWelcomeBinding
+    private lateinit var binding: FragmentItemDetailBinding
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -19,13 +19,12 @@ class WelcomeFragment : Fragment() {
     ): View? {
         // Inflate view and obtain an instance of the binding class
         binding = DataBindingUtil.inflate( inflater
-                                         , R.layout.fragment_welcome
+                                         , R.layout.fragment_item_detail
                                          , container
                                          , false
                                          )
 
         return binding.root
     }
-
 
 }

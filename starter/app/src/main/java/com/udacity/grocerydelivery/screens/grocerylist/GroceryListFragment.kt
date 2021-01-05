@@ -1,4 +1,4 @@
-package com.udacity.shoestore.screens.shoelist
+package com.udacity.grocerydelivery.screens.grocerylist
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -6,8 +6,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import com.udacity.shoestore.R
-import com.udacity.shoestore.databinding.FragmentGroceryListBinding
+import com.udacity.grocerydelivery.R
+import com.udacity.grocerydelivery.databinding.FragmentGroceryListBinding
 
 class GroceryListFragment : Fragment() {
 

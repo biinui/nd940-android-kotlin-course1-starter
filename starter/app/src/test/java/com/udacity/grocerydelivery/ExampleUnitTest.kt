@@ -1,4 +1,4 @@
-package com.udacity.shoestore
+package com.udacity.grocerydelivery
 
 import org.junit.Test
 
