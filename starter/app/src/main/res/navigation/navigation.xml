@@ -43,5 +43,9 @@
     <fragment
         android:id="@+id/itemDetailFragment"
         android:name="com.udacity.grocerydelivery.screens.itemdetail.ItemDetailFragment"
-        android:label="ItemDetailFragment" />
+        android:label="ItemDetailFragment" >
+        <action
+            android:id="@+id/action_itemDetailFragment_to_groceryListFragment"
+            app:destination="@id/groceryListFragment" />
+    </fragment>
 </navigation>

@@ -1,11 +1,12 @@
 package com.udacity.grocerydelivery.screens.itemdetail
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import com.udacity.grocerydelivery.R
 import com.udacity.grocerydelivery.databinding.FragmentItemDetailBinding
 
@@ -23,6 +24,10 @@ class ItemDetailFragment : Fragment() {
                                          , container
                                          , false
                                          )
+
+        binding.itemCancelButton.setOnClickListener {
+            it.findNavController().navigate(ItemDetailFragmentDirections.actionItemDetailFragmentToGroceryListFragment())
+        }
 
         return binding.root
     }
