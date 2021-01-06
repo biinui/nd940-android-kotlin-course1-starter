@@ -29,6 +29,16 @@ class ItemDetailFragment : Fragment() {
             it.findNavController().navigate(ItemDetailFragmentDirections.actionItemDetailFragmentToGroceryListFragment())
         }
 
+        binding.itemSaveButton.setOnClickListener {
+            val name   : String = binding.itemNameEdit.text.toString()
+            val company: String = binding.itemCompanyEdit.text.toString()
+            val desc   : String = binding.itemDescriptionEdit.text.toString()
+
+            val price  : Float = binding.itemPriceEdit.text.toString().toFloat()
+
+            it.findNavController().navigate(ItemDetailFragmentDirections.actionItemDetailFragmentToGroceryListFragment(name, company, desc, price))
+        }
+
         return binding.root
     }
 

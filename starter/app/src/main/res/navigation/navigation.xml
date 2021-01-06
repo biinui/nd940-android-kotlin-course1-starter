@@ -50,7 +50,24 @@
         android:label="ItemDetailFragment">
         <action
             android:id="@+id/action_itemDetailFragment_to_groceryListFragment"
-            app:destination="@id/groceryListFragment" />
+            app:destination="@id/groceryListFragment">
+            <argument
+                android:name="item_name"
+                android:defaultValue=""
+                app:argType="string" />
+            <argument
+                android:name="item_company"
+                android:defaultValue=""
+                app:argType="string" />
+            <argument
+                android:name="item_description"
+                android:defaultValue=""
+                app:argType="string" />
+            <argument
+                android:name="item_price"
+                android:defaultValue="0"
+                app:argType="float" />
+        </action>
     </fragment>
 
 </navigation>
