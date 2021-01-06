@@ -51,6 +51,8 @@
         android:label="ItemDetailFragment" >
         <action
             android:id="@+id/action_itemDetailFragment_to_groceryListFragment"
-            app:destination="@id/groceryListFragment" />
+            app:destination="@id/groceryListFragment"
+            app:popUpTo="@id/groceryListFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 </navigation>
