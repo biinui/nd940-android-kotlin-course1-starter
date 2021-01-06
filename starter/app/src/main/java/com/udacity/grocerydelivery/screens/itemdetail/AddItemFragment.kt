@@ -11,7 +11,7 @@ import com.udacity.grocerydelivery.R
 import com.udacity.grocerydelivery.databinding.FragmentItemDetailBinding
 import com.udacity.grocerydelivery.models.Item
 
-class ItemDetailFragment : Fragment() {
+class AddItemFragment : Fragment() {
 
     private lateinit var binding: FragmentItemDetailBinding
 
