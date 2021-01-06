@@ -10,6 +10,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
+import com.udacity.grocerydelivery.MainActivityViewModel
 import com.udacity.grocerydelivery.R
 import com.udacity.grocerydelivery.databinding.FragmentGroceryListBinding
 import kotlinx.android.synthetic.main.row_item.view.*
@@ -18,7 +19,7 @@ class GroceryListFragment : Fragment() {
 
     private lateinit var binding: FragmentGroceryListBinding
 
-    private lateinit var viewModel: GroceryListViewModel
+    private lateinit var viewModel: MainActivityViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -33,7 +34,7 @@ class GroceryListFragment : Fragment() {
 
 
 
-        viewModel = ViewModelProvider(this).get(GroceryListViewModel::class.java)
+        viewModel = ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
         val groceryListFragmentArgs by navArgs<GroceryListFragmentArgs>()
         groceryListFragmentArgs.newItem?.let { viewModel.addItemToList(it) }
 
