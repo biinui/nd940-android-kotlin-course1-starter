@@ -4,10 +4,11 @@
     android:id="@+id/navigation"
     app:startDestination="@id/loginFragment">
 
+
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.udacity.grocerydelivery.screens.login.LoginFragment"
-        android:label="LoginFragment">
+        android:label="LoginFragment" >
         <action
             android:id="@+id/action_loginFragment_to_welcomeFragment"
             app:destination="@id/welcomeFragment" />
@@ -15,59 +16,41 @@
             android:id="@+id/action_loginFragment_to_groceryListFragment"
             app:destination="@id/groceryListFragment" />
     </fragment>
-
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.udacity.grocerydelivery.screens.welcome.WelcomeFragment"
-        android:label="WelcomeFragment">
+        android:label="WelcomeFragment" >
         <action
             android:id="@+id/action_welcomeFragment_to_instructionsFragment"
             app:destination="@id/instructionsFragment" />
     </fragment>
-
     <fragment
         android:id="@+id/instructionsFragment"
         android:name="com.udacity.grocerydelivery.screens.instructions.InstructionsFragment"
-        android:label="InstructionsFragment">
+        android:label="InstructionsFragment" >
         <action
             android:id="@+id/action_instructionsFragment_to_groceryListFragment"
             app:destination="@id/groceryListFragment" />
     </fragment>
-
     <fragment
         android:id="@+id/groceryListFragment"
         android:name="com.udacity.grocerydelivery.screens.grocerylist.GroceryListFragment"
-        android:label="GroceryListFragment">
+        android:label="GroceryListFragment" >
         <action
             android:id="@+id/action_groceryListFragment_to_itemDetailFragment"
             app:destination="@id/itemDetailFragment" />
-
+        <argument
+            android:name="new_item"
+            app:argType="com.udacity.grocerydelivery.models.Item"
+            app:nullable="true"
+            android:defaultValue="@null" />
     </fragment>
-
     <fragment
         android:id="@+id/itemDetailFragment"
         android:name="com.udacity.grocerydelivery.screens.itemdetail.ItemDetailFragment"
-        android:label="ItemDetailFragment">
+        android:label="ItemDetailFragment" >
         <action
             android:id="@+id/action_itemDetailFragment_to_groceryListFragment"
-            app:destination="@id/groceryListFragment">
-            <argument
-                android:name="item_name"
-                android:defaultValue=""
-                app:argType="string" />
-            <argument
-                android:name="item_company"
-                android:defaultValue=""
-                app:argType="string" />
-            <argument
-                android:name="item_description"
-                android:defaultValue=""
-                app:argType="string" />
-            <argument
-                android:name="item_price"
-                android:defaultValue="0"
-                app:argType="float" />
-        </action>
+            app:destination="@id/groceryListFragment" />
     </fragment>
-
 </navigation>

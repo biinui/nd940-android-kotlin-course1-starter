@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.udacity.grocerydelivery.R
 import com.udacity.grocerydelivery.databinding.FragmentItemDetailBinding
+import com.udacity.grocerydelivery.models.Item
 
 class ItemDetailFragment : Fragment() {
 
@@ -30,13 +31,15 @@ class ItemDetailFragment : Fragment() {
         }
 
         binding.itemSaveButton.setOnClickListener {
-            val name   : String = binding.itemNameEdit.text.toString()
-            val company: String = binding.itemCompanyEdit.text.toString()
+            val name   : String = binding.itemNameEdit       .text.toString()
+            val company: String = binding.itemCompanyEdit    .text.toString()
             val desc   : String = binding.itemDescriptionEdit.text.toString()
 
-            val price  : Float = binding.itemPriceEdit.text.toString().toFloat()
+            val price: Float = binding.itemPriceEdit.text.toString().toFloat()
 
-            it.findNavController().navigate(ItemDetailFragmentDirections.actionItemDetailFragmentToGroceryListFragment(name, company, desc, price))
+            val item = Item(name, company, price, desc)
+
+            it.findNavController().navigate(ItemDetailFragmentDirections.actionItemDetailFragmentToGroceryListFragment(item))
         }
 
         return binding.root
