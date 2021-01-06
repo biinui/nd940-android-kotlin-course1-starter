@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
@@ -32,8 +31,6 @@ class GroceryListFragment : Fragment() {
                                          , false
                                          )
 
-
-
         viewModel = ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
         val groceryListFragmentArgs by navArgs<GroceryListFragmentArgs>()
         groceryListFragmentArgs.newItem?.let { viewModel.addItemToList(it) }
@@ -42,20 +39,22 @@ class GroceryListFragment : Fragment() {
             findNavController().navigate(GroceryListFragmentDirections.actionGroceryListFragmentToItemDetailFragment())
         }
 
-        viewModel.groceryList.observe(viewLifecycleOwner, Observer { newItem ->
-
-        })
-
-        for (item in viewModel.groceryList.value!!) {
-            val row_item: View = View.inflate(this.context, R.layout.row_item, null)
-            row_item.row_item_name.text = item.name
-            row_item.row_item_company.text = item.company
-            row_item.row_item_description.text = item.description
-            row_item.row_item_price.text = item.price.toString()
-            binding.groceryListLayout.addView(row_item)
-        }
+        updateUI()
 
         return binding.root
+    }
+
+    private fun updateUI() {
+        for (item in viewModel.groceryList.value!!) {
+            val rowItemView: View = View.inflate(this.context, R.layout.row_item, null)
+            rowItemView.apply {
+                row_item_name       .text = item.name
+                row_item_company    .text = item.company
+                row_item_description.text = item.description
+                row_item_price      .text = item.price.toString()
+            }
+            binding.groceryListLayout.addView(rowItemView)
+        }
     }
 
 }
