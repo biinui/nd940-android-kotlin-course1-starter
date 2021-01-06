@@ -4,7 +4,6 @@
     android:id="@+id/navigation"
     app:startDestination="@id/loginFragment">
 
-
     <fragment
         android:id="@+id/loginFragment"
         android:name="com.udacity.grocerydelivery.screens.login.LoginFragment"

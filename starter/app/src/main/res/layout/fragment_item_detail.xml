@@ -79,7 +79,7 @@
             android:id="@+id/item_cancel_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@android:string/cancel" />
+            android:text="@string/back_without_saving" />
 
     </LinearLayout>
 
