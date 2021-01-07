@@ -15,13 +15,6 @@
             app:exitAnim="@anim/slide_out_left"
             app:popEnterAnim="@anim/slide_out_right"
             app:popExitAnim="@anim/slide_in_left" />
-        <action
-            android:id="@+id/action_loginFragment_to_groceryListFragment"
-            app:destination="@id/groceryListFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left"
-            app:popEnterAnim="@anim/slide_out_right"
-            app:popExitAnim="@anim/slide_in_left" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
@@ -64,6 +57,11 @@
             android:defaultValue="@null"
             app:argType="com.udacity.grocerydelivery.models.Item"
             app:nullable="true" />
+        <action
+            android:id="@+id/action_groceryListFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_out_right"
+            app:exitAnim="@anim/slide_in_left" />
     </fragment>
     <fragment
         android:id="@+id/itemDetailFragment"

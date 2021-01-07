@@ -1,9 +1,7 @@
 package com.udacity.grocerydelivery.screens.grocerylist
 
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
@@ -40,6 +38,7 @@ class GroceryListFragment : Fragment() {
         }
 
         updateUI()
+        setHasOptionsMenu(true)
 
         return binding.root
     }
@@ -54,6 +53,21 @@ class GroceryListFragment : Fragment() {
                 row_item_price      .text = item.price.toString()
             }
             binding.groceryListLayout.addView(rowItemView)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.menu, menu)
+        return super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.loginFragment -> {
+                findNavController().navigate(GroceryListFragmentDirections.actionGroceryListFragmentToLoginFragment())
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 
