@@ -12,8 +12,8 @@ class MainActivityViewModel : ViewModel() {
     val groceryList: LiveData<ArrayList<Item>>
         get() = _groceryList
 
-    private val _newItem = MutableLiveData<Item>()
-    
+    private var _newItem = MutableLiveData<Item>()
+
     init {
         _groceryList.value = ArrayList<Item>()
         _newItem.value = Item("", "", 0f, "")
@@ -37,6 +37,8 @@ class MainActivityViewModel : ViewModel() {
 
     fun saveItem() {
         _groceryList.value?.add(_newItem.value!!)
+        _newItem = MutableLiveData<Item>()
+        _newItem.value = Item("", "", 0f, "")
     }
 
     fun getName(): String {
