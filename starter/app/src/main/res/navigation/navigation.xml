@@ -10,10 +10,18 @@
         android:label="@string/login">
         <action
             android:id="@+id/action_loginFragment_to_welcomeFragment"
-            app:destination="@id/welcomeFragment" />
+            app:destination="@id/welcomeFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_in_left" />
         <action
             android:id="@+id/action_loginFragment_to_groceryListFragment"
-            app:destination="@id/groceryListFragment" />
+            app:destination="@id/groceryListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_in_left" />
     </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
@@ -21,7 +29,11 @@
         android:label="@string/welcome">
         <action
             android:id="@+id/action_welcomeFragment_to_instructionsFragment"
-            app:destination="@id/instructionsFragment" />
+            app:destination="@id/instructionsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_in_left" />
     </fragment>
     <fragment
         android:id="@+id/instructionsFragment"
@@ -30,6 +42,10 @@
         <action
             android:id="@+id/action_instructionsFragment_to_groceryListFragment"
             app:destination="@id/groceryListFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_in_left"
             app:popUpTo="@id/loginFragment" />
     </fragment>
     <fragment
@@ -38,7 +54,11 @@
         android:label="@string/grocery_list">
         <action
             android:id="@+id/action_groceryListFragment_to_itemDetailFragment"
-            app:destination="@id/itemDetailFragment" />
+            app:destination="@id/itemDetailFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_out_right"
+            app:popExitAnim="@anim/slide_in_left" />
         <argument
             android:name="new_item"
             android:defaultValue="@null"
@@ -52,6 +72,8 @@
         <action
             android:id="@+id/action_itemDetailFragment_to_groceryListFragment"
             app:destination="@id/groceryListFragment"
+            app:enterAnim="@anim/slide_out_right"
+            app:exitAnim="@anim/slide_in_left"
             app:popUpTo="@id/groceryListFragment"
             app:popUpToInclusive="true" />
     </fragment>
