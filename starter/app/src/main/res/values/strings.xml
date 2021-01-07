@@ -7,11 +7,11 @@
     <string name="login_with_existing_account">Login with existing account</string>
 
     <string name="welcome_title">Welcome!</string>
-    <string name="welcome_message">We\'re delighted to have you here. We\'ll handle your recurring grocery needs so you\'ll save time and energy. Thank you!</string>
+    <string name="welcome_message">We\'re delighted to have you here. We\'ll remember your grocery needs so you won\'t forget anything. Thank you!</string>
     <string name="go_to_instructions">What does this app do?</string>
 
     <string name="instructions_title">Instructions</string>
-    <string name="instructions_message">Look around the list of items by scrolling.</string>
+    <string name="instructions_message">Look around the list of items by scrolling. Add more items that you need to buy.</string>
     <string name="go_to_grocery_list">Let\'s go!</string>
     <string name="edit">Edit</string>
 

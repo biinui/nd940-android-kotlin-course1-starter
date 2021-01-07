@@ -6,7 +6,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import androidx.navigation.fragment.navArgs
 import com.udacity.grocerydelivery.MainActivityViewModel
 import com.udacity.grocerydelivery.R
 import com.udacity.grocerydelivery.databinding.FragmentGroceryListBinding
@@ -30,8 +29,6 @@ class GroceryListFragment : Fragment() {
                                          )
 
         viewModel = ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
-        val groceryListFragmentArgs by navArgs<GroceryListFragmentArgs>()
-        groceryListFragmentArgs.newItem?.let { viewModel.addItemToList(it) }
 
         binding.fab.setOnClickListener {
             findNavController().navigate(GroceryListFragmentDirections.actionGroceryListFragmentToItemDetailFragment())

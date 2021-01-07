@@ -3,20 +3,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="com.udacity.grocerydelivery.MainActivityViewModel" />
+
+    </data>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        tools:context=".screens.itemdetail.AddItemFragment">
+        tools:context=".screens.additem.AddItemFragment">
 
         <!--
+          Why ConstraintLayout?
 
-        Why ConstraintLayout?
-
-        I wanted the start of the EditTexts to be aligned.
-        If I use LinearLayout, it'll require two more layers of LinearLayout.
-        The downside is human-readability takes a hit with ConstraintLayout.
-
+          I wanted the start of the EditTexts to be aligned.
+          If I use LinearLayout, it'll require two more layers of LinearLayout.
+          The downside is human-readability takes a hit with ConstraintLayout.
         -->
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -67,6 +73,7 @@
                 android:hint="@string/name"
                 android:importantForAutofill="no"
                 android:inputType="text"
+                android:text="@={viewmodel.name}"
                 app:layout_constraintBottom_toTopOf="@+id/item_company_edit"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/item_company_edit"
@@ -80,6 +87,7 @@
                 android:hint="@string/company"
                 android:importantForAutofill="no"
                 android:inputType="text"
+                android:text="@={viewmodel.company}"
                 app:layout_constraintBottom_toTopOf="@+id/item_price_edit"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/item_price_edit" />
@@ -93,7 +101,7 @@
                 android:hint="@string/price"
                 android:importantForAutofill="no"
                 android:inputType="numberDecimal"
-                android:text="@string/default_float_value"
+                android:text="@={viewmodel.price}"
                 app:layout_constraintBottom_toTopOf="@+id/item_description_edit"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/item_description_edit" />
@@ -107,6 +115,7 @@
                 android:hint="@string/description"
                 android:importantForAutofill="no"
                 android:inputType="text"
+                android:text="@={viewmodel.description}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/item_description_text" />
