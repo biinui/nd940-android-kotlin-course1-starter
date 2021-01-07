@@ -44,6 +44,7 @@
             android:id="@+id/new_login_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="@android:color/holo_blue_dark"
             android:text="@string/new_login" />
 
         <Button
