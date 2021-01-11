@@ -11,135 +11,129 @@
 
     </data>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context=".screens.additem.AddItemFragment">
-
-        <!--
+    <!--
           Why ConstraintLayout?
 
           I wanted the start of the EditTexts to be aligned.
           If I use LinearLayout, it'll require two more layers of LinearLayout.
-          The downside is human-readability takes a hit with ConstraintLayout.
-        -->
+          The downside for ConstraintLayout is worse readability.
+     -->
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="@dimen/default_margin">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/default_margin">
 
-            <TextView
-                android:id="@+id/item_name_text"
-                style="@style/TextStyle"
-                android:layout_width="wrap_content"
-                android:text="@string/name"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+        <TextView
+            android:id="@+id/item_name_text"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:text="@string/name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/item_company_text"
-                style="@style/TextStyle"
-                android:layout_width="wrap_content"
-                android:text="@string/company"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_name_text" />
+        <TextView
+            android:id="@+id/item_company_text"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:text="@string/company"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_name_text" />
 
-            <TextView
-                android:id="@+id/item_price_text"
-                style="@style/TextStyle"
-                android:layout_width="wrap_content"
-                android:text="@string/price"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_company_text" />
+        <TextView
+            android:id="@+id/item_price_text"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:text="@string/price"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_company_text" />
 
-            <TextView
-                android:id="@+id/item_description_text"
-                style="@style/TextStyle"
-                android:layout_width="wrap_content"
-                android:gravity="center"
-                android:text="@string/description"
-                android:textAlignment="inherit"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/item_price_text" />
+        <TextView
+            android:id="@+id/item_description_text"
+            style="@style/TextStyle"
+            android:layout_width="wrap_content"
+            android:gravity="center"
+            android:text="@string/description"
+            android:textAlignment="inherit"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_price_text" />
 
-            <EditText
-                android:id="@+id/item_name_edit"
-                style="@style/TextStyle"
-                android:layout_width="0dp"
-                android:ems="10"
-                android:hint="@string/name"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:text="@={viewmodel.name}"
-                app:layout_constraintBottom_toTopOf="@+id/item_company_edit"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/item_company_edit"
-                app:layout_constraintTop_toTopOf="parent" />
+        <EditText
+            android:id="@+id/item_name_edit"
+            style="@style/TextStyle"
+            android:layout_width="0dp"
+            android:ems="10"
+            android:hint="@string/name"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:text="@={viewmodel.name}"
+            app:layout_constraintBottom_toTopOf="@+id/item_company_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/item_company_edit"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <EditText
-                android:id="@+id/item_company_edit"
-                style="@style/TextStyle"
-                android:layout_width="0dp"
-                android:ems="10"
-                android:hint="@string/company"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:text="@={viewmodel.company}"
-                app:layout_constraintBottom_toTopOf="@+id/item_price_edit"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/item_price_edit" />
-
-
-            <EditText
-                android:id="@+id/item_price_edit"
-                style="@style/TextStyle"
-                android:layout_width="0dp"
-                android:ems="10"
-                android:hint="@string/price"
-                android:importantForAutofill="no"
-                android:inputType="numberDecimal"
-                android:text="@={viewmodel.price}"
-                app:layout_constraintBottom_toTopOf="@+id/item_description_edit"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="@+id/item_description_edit" />
+        <EditText
+            android:id="@+id/item_company_edit"
+            style="@style/TextStyle"
+            android:layout_width="0dp"
+            android:ems="10"
+            android:hint="@string/company"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:text="@={viewmodel.company}"
+            app:layout_constraintBottom_toTopOf="@+id/item_price_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/item_price_edit" />
 
 
-            <EditText
-                android:id="@+id/item_description_edit"
-                style="@style/TextStyle"
-                android:layout_width="0dp"
-                android:ems="10"
-                android:hint="@string/description"
-                android:importantForAutofill="no"
-                android:inputType="text"
-                android:text="@={viewmodel.description}"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/item_description_text" />
+        <EditText
+            android:id="@+id/item_price_edit"
+            style="@style/TextStyle"
+            android:layout_width="0dp"
+            android:ems="10"
+            android:hint="@string/price"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:text="@={viewmodel.price}"
+            app:layout_constraintBottom_toTopOf="@+id/item_description_edit"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/item_description_edit" />
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
 
+        <EditText
+            android:id="@+id/item_description_edit"
+            style="@style/TextStyle"
+            android:layout_width="0dp"
+            android:ems="10"
+            android:hint="@string/description"
+            android:importantForAutofill="no"
+            android:inputType="text"
+            android:text="@={viewmodel.description}"
+            app:layout_constraintBaseline_toBaselineOf="@+id/item_description_text"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/item_description_text" />
 
         <Button
             android:id="@+id/item_save_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
+            android:layout_marginTop="16dp"
             android:background="@android:color/holo_green_light"
-            android:text="@string/save" />
+            android:text="@string/save"
+            app:layout_constraintTop_toBottomOf="@id/item_description_text" />
 
         <Button
             android:id="@+id/item_cancel_button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/default_margin"
+            android:layout_marginTop="16dp"
             android:background="@android:color/holo_red_light"
-            android:text="@string/back_without_saving" />
+            android:text="@string/back_without_saving"
+            app:layout_constraintTop_toBottomOf="@id/item_save_button"
+            tools:layout_editor_absoluteX="8dp" />
 
-    </LinearLayout>
-
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
 

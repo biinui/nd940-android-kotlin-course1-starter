@@ -3,6 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <!--
+          Why ConstraintLayout?
+
+          Using LinearLayout doesn't allow the Floating Action
+          Button to float on the bottom|end.
+     -->
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
