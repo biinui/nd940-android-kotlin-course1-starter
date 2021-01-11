@@ -7,7 +7,7 @@
 
         <variable
             name="viewmodel"
-            type="com.udacity.grocerydelivery.MainActivityViewModel" />
+            type="com.udacity.grocerydelivery.screens.additem.AddItemViewModel" />
 
     </data>
 

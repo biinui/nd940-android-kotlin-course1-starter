@@ -8,7 +8,6 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.udacity.grocerydelivery.MainActivityViewModel
 import com.udacity.grocerydelivery.R
 import com.udacity.grocerydelivery.databinding.FragmentAddItemBinding
 
@@ -16,7 +15,7 @@ class AddItemFragment : Fragment() {
 
     private lateinit var binding: FragmentAddItemBinding
 
-    private lateinit var viewModel: MainActivityViewModel
+    private lateinit var viewModel: AddItemViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -30,24 +29,20 @@ class AddItemFragment : Fragment() {
                                          )
 
         binding.itemCancelButton.setOnClickListener {
-            navigateToGroceryList()
+            val toGroceryListFragment = AddItemFragmentDirections.actionItemDetailFragmentToGroceryListFragment(null)
+            findNavController().navigate(toGroceryListFragment)
         }
 
-        viewModel = ViewModelProvider(requireActivity()).get(MainActivityViewModel::class.java)
+        viewModel = ViewModelProvider(this).get(AddItemViewModel::class.java)
         binding.viewmodel = viewModel
         binding.lifecycleOwner = this
 
         binding.itemSaveButton.setOnClickListener {
-            viewModel.saveItem()
-            navigateToGroceryList()
+            val toGroceryListFragment = AddItemFragmentDirections.actionItemDetailFragmentToGroceryListFragment(viewModel.newItem.value)
+            findNavController().navigate(toGroceryListFragment)
         }
 
         return binding.root
-    }
-
-    private fun navigateToGroceryList() {
-        val toGroceryListFragment = AddItemFragmentDirections.actionItemDetailFragmentToGroceryListFragment()
-        findNavController().navigate(toGroceryListFragment)
     }
 
 }

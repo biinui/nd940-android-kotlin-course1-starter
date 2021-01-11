@@ -12,11 +12,8 @@ class MainActivityViewModel : ViewModel() {
     val groceryList: LiveData<ArrayList<Item>>
         get() = _groceryList
 
-    private var _newItem = MutableLiveData<Item>()
-
     init {
         _groceryList.value = ArrayList<Item>()
-        _newItem.value = Item("", "", 0f, "")
         populateListWithDummyItems()
     }
 
@@ -30,59 +27,8 @@ class MainActivityViewModel : ViewModel() {
         _groceryList.value?.add(item3)
     }
 
-    override fun onCleared() {
-        super.onCleared()
-        Timber.e("I'm cleared :(")
-    }
-
-    fun saveItem() {
-        _groceryList.value?.add(_newItem.value!!)
-        _newItem = MutableLiveData<Item>()
-        _newItem.value = Item("", "", 0f, "")
-    }
-
-    fun getName(): String {
-        return _newItem.value?.name.toString()
-    }
-
-    fun setName(newName: String) {
-        val curName = _newItem.value?.name
-        if (curName != newName) {
-            _newItem.value?.name = newName
-        }
-    }
-
-    fun getCompany(): String {
-        return _newItem.value?.company.toString()
-    }
-
-    fun setCompany(newCompany: String) {
-        val curComp = _newItem.value?.company
-        if (curComp != newCompany) {
-            _newItem.value?.company = newCompany
-        }
-    }
-
-    fun getPrice(): String {
-        return _newItem.value?.price.toString()
-    }
-
-    fun setPrice(newPrice: String) {
-        val curPrice = _newItem.value?.price.toString()
-        if (curPrice != newPrice) {
-            _newItem.value?.price = newPrice.toFloat()
-        }
-    }
-
-    fun getDescription(): String {
-        return _newItem.value?.description.toString()
-    }
-
-    fun setDescription(newDesc: String) {
-        val curDesc = _newItem.value?.description
-        if (curDesc != newDesc) {
-            _newItem.value?.description = newDesc
-        }
+    fun saveItem(item: Item) {
+        _groceryList.value?.add(item)
     }
 
 }
