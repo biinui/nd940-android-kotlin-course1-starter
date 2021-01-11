@@ -1,45 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-<!--
-    Why LinearLayout?
+    <!--
+        Why LinearLayout?
 
-    A simple horizontally-stacked views.
--->
+        A simple horizontally-stacked views.
+    -->
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    <LinearLayout
+        android:id="@+id/row_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/row_item_name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="@string/name" />
+        <TextView
+            android:id="@+id/row_item_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/name" />
 
-    <TextView
-        android:id="@+id/row_item_company"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        <TextView
+            android:id="@+id/row_item_company"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
 
-        android:text="@string/company" />
+            android:text="@string/company" />
 
-    <TextView
-        android:id="@+id/row_item_price"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
+        <TextView
+            android:id="@+id/row_item_price"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
 
-        android:text="@string/price" />
+            android:text="@string/price" />
 
-    <TextView
-        android:id="@+id/row_item_description"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        android:text="@string/description" />
+        <TextView
+            android:id="@+id/row_item_description"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@string/description" />
 
-</LinearLayout>
+    </LinearLayout>
+
+</layout>

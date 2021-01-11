@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.udacity.grocerydelivery.R
 import com.udacity.grocerydelivery.databinding.FragmentGroceryListBinding
-import kotlinx.android.synthetic.main.row_item.view.*
+import com.udacity.grocerydelivery.databinding.RowItemBinding
 
 class GroceryListFragment : Fragment() {
 
@@ -36,22 +36,22 @@ class GroceryListFragment : Fragment() {
             findNavController().navigate(GroceryListFragmentDirections.actionGroceryListFragmentToItemDetailFragment())
         }
 
-        updateUI()
+        displayRows(inflater, container)
         setHasOptionsMenu(true)
 
         return binding.root
     }
 
-    private fun updateUI() {
+    private fun displayRows(inflater: LayoutInflater, container: ViewGroup?) {
         for (item in viewModel.groceryList.value!!) {
-            val rowItemView: View = View.inflate(this.context, R.layout.row_item, null)
-            rowItemView.apply {
-                row_item_name       .text = item.name
-                row_item_company    .text = item.company
-                row_item_description.text = item.description
-                row_item_price      .text = item.price.toString()
+            val rowItemBinding: RowItemBinding = DataBindingUtil.inflate(inflater, R.layout.row_item, container, false)
+            rowItemBinding.apply {
+                rowItemName       .text = item.name
+                rowItemCompany    .text = item.company
+                rowItemDescription.text = item.description
+                rowItemPrice      .text = item.price.toString()
             }
-            binding.groceryListLayout.addView(rowItemView)
+            binding.groceryListLayout.addView(rowItemBinding.rowItem)
         }
     }
 
