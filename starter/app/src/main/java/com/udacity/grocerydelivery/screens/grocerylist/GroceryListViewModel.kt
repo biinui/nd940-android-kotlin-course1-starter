@@ -1,4 +1,4 @@
-package com.udacity.grocerydelivery
+package com.udacity.grocerydelivery.screens.grocerylist
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,7 +6,7 @@ import androidx.lifecycle.ViewModel
 import com.udacity.grocerydelivery.models.Item
 import timber.log.Timber
 
-class MainActivityViewModel : ViewModel() {
+class GroceryListViewModel : ViewModel() {
 
     private val _groceryList = MutableLiveData<ArrayList<Item>>()
     val groceryList: LiveData<ArrayList<Item>>
