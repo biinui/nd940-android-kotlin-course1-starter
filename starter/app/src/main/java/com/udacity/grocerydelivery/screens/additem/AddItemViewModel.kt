@@ -1,5 +1,6 @@
 package com.udacity.grocerydelivery.screens.additem
 
+import androidx.core.text.isDigitsOnly
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -44,7 +45,13 @@ class AddItemViewModel : ViewModel() {
     fun setPrice(newPrice: String) {
         val curPrice = _newItem.value?.price.toString()
         if (curPrice != newPrice) {
-            _newItem.value?.price = newPrice.toFloat()
+            if (newPrice.isNullOrEmpty()) {
+                _newItem.value?.price = 0F
+            } else if (newPrice.isDigitsOnly()) {
+                _newItem.value?.price = newPrice.toFloat()
+            } else {
+                _newItem.value?.price = 0F
+            }
         }
     }
 
